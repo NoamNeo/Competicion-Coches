@@ -1,12 +1,16 @@
 public class Circuito {
-  private String nombre;
-  private int longitud;
-  private Carrera[] carreras = null;
+    private String nombre;
+    private int longitud;
+    private Carrera[] carreras = null;
 
-  public void anhadirCarrera(Carrera carrera) {
-  }
+    public String getNombre() {
+        return nombre;
+    }
 
-  public int obtenerCarrerasTotales() {
-    return 0;
-  }
+    public void anhadirCarrera(Carrera carrera) {
+    }
+
+    public int obtenerCarrerasTotales() {
+        return 0;
+    }
 }
