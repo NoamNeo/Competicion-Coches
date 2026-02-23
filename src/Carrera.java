@@ -7,11 +7,17 @@ public class Carrera {
 
     public boolean ejecutarCarrera() {
         if (!yaCorrida) {
-            System.out.println("Simular carrera");
+            for (Piloto piloto : pilotos) {
+                System.out.println(piloto.getNombre() + " va a " + (piloto.getCoche().acabaCarrera(getLongitudTotal()) ? String.valueOf(piloto.velocidadMedia()) : "0" + " km/h."));
+            }
             yaCorrida = true;
             return true;
         }
         return false;
+    }
+
+    private void ordernarPilotos() {
+
     }
 
     public Carrera(int vueltas, Piloto[] pilotos, String temporada, Circuito circuito) {
@@ -46,9 +52,7 @@ public class Carrera {
         return circuito;
     }
 
-    /*
     public int getLongitudTotal() {
         return circuito.getLongitud() * vueltas;
     }
-*/
 }

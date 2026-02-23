@@ -22,4 +22,9 @@ public class Coche {
         this.escuderia = escuderia;
         this.fiabilidad = fiabilidad;
     }
+
+    public boolean acabaCarrera(int kilometros) {
+
+        return false;
+    }
 }
