@@ -8,6 +8,17 @@ public class Competicion {
     private Carrera[] carreras;
     private int numCarreras; // Contador para saber cuántas carreras hay
 
+    public boolean arrancarCampeonato() {
+        if (!haCampeonato) {
+            for (Carrera iCarrera : carreras) {
+                iCarrera.ejecutarCarrera(participantes);
+            }
+            this.haCampeonato = true;
+            return true;
+        }
+        return false;
+    }
+
     public boolean anhadirCarrera(Carrera carrera, int vueltas) {
         if (!haCampeonato) {
             if (!estaEnLista(carrera)) {
