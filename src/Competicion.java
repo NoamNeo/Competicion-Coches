@@ -8,9 +8,32 @@ public class Competicion {
     private int numCarreras; // Contador para saber cuántas carreras hay
 
     public boolean anhadirPiloto(Piloto piloto) {
-
+        if (carreras == null || carreras.length == 0) {
+            if (!estaEnLista(piloto)) {
+                participantes = getBuffer(piloto);
+                return true;
+            }
+        }
         return false;
+    }
 
+    private Piloto[] getBuffer(Piloto piloto) {
+        int length = (participantes == null) ? 1 : participantes.length + 1;
+        Piloto[] buffer = new Piloto[length];
+        for (int i = 0; i < participantes.length; i++) {
+            buffer[i] = participantes[i];
+        }
+        buffer[length - 1] = piloto;
+        return buffer;
+    }
+
+    private boolean estaEnLista(Piloto piloto) {
+        for (Piloto iPiloto : participantes) {
+            if (iPiloto.getNombre().equals(piloto.getNombre())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int getNumPilotos() {
