@@ -12,7 +12,7 @@ public class Piloto {
         this.nombre = nombre;
         this.edad = edad;
         this.coche = coche;
-//        this.habilidad = habilidad;
+//      this.habilidad = habilidad;
     }
 
     public String getNombre() {
