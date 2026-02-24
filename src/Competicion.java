@@ -45,23 +45,26 @@ public class Competicion {
     private String[] getArrayEscuderia(Piloto[] participantes) {
         String[] escuderias = null;
         for (Piloto iPiloto : participantes) {
-            outerLoop: if (escuderias == null) {
+            if (escuderias == null) {
                 String[] buffer = new String[1];
                 buffer[0] = iPiloto.getCoche().getEscuderia();
                 escuderias = buffer;
             } else {
+                int contador = 0;
                 for (String nombre : escuderias) {
                     if (nombre.equals(iPiloto.getCoche().getEscuderia())) {
-                        break outerLoop;
+                        contador++;
                     }
                 }
-                int length = escuderias.length + 1;
-                String[] buffer = new String[length];
-                for (int i = 0; i < escuderias.length; i++) {
-                    buffer[i] = escuderias[i];
+                if (contador == 0) {
+                    int length = escuderias.length + 1;
+                    String[] buffer = new String[length];
+                    for (int i = 0; i < escuderias.length; i++) {
+                        buffer[i] = escuderias[i];
+                    }
+                    buffer[length - 1] = iPiloto.getCoche().getEscuderia();
+                    escuderias = buffer;
                 }
-                buffer[length - 1] = iPiloto.getCoche().getEscuderia();
-                escuderias = buffer;
             }
         }
         return escuderias;
