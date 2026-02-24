@@ -35,20 +35,20 @@ public class Piloto {
         return coche;
     }
 
-    public double getHabilidad() {
+    public float getHabilidad() {
         Random rand = new Random();
         if (habilidad.equals("Excelente")) {
-            double habAleatoria = rand.nextDouble(0.9,1);
+            float habAleatoria = rand.nextFloat(0.9f,1);
             return habAleatoria;
         }
         if (habilidad.equals("Bueno")) {
-            double habAleatoria = rand.nextDouble(0.8,0.9);
+            float habAleatoria = rand.nextFloat(0.8f,0.9f);
             return habAleatoria;
         }
         if (habilidad.equals("Mediocre")) {
-            double habAleatoria = rand.nextDouble(0.7,0.8);
+            float habAleatoria = rand.nextFloat(0.7f,0.8f);
             return habAleatoria;
         }
-        return 0;
+        return 0.6f;
     }
 }
