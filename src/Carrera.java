@@ -5,7 +5,8 @@ public class Carrera {
     private String temporada;
     private Circuito circuito;
 
-    public boolean ejecutarCarrera() {
+    public boolean ejecutarCarrera(Piloto[] pilotos) {
+        this.pilotos = pilotos;
         if (!yaCorrida) {
             for (Piloto piloto : pilotos) {
                 System.out.println(piloto.getNombre() + " va a " + (piloto.getCoche().acabaCarrera(getLongitudTotal()) ? String.valueOf(piloto.velocidadMedia()) : "0" + " km/h."));
@@ -16,14 +17,22 @@ public class Carrera {
         return false;
     }
 
-    private void ordernarPilotos() {
-
+    private void ordenarPilotos() {
+        pilotosOrdenados = new Piloto[pilotos.length];
+        pilotosOrdenados[0] = pilotos[0];
+        for (int i = 1; i < pilotos.length; i++) {
+            int j;
+            for (j = i; j > 0; j--)
+                if (pilotos[i].velocidadMedia() > pilotosOrdenados[j].velocidadMedia())
+                    pilotosOrdenados[j] = pilotosOrdenados[j - 1];
+                else break;
+            pilotosOrdenados[j] = pilotosOrdenados[i];
+        }
     }
 
-    public Carrera(int vueltas, Piloto[] pilotos, String temporada, Circuito circuito) {
+    public Carrera(int vueltas, String temporada, Circuito circuito) {
 //        yaCorrida = false;
         this.vueltas = vueltas;
-        this.pilotos = pilotos;
         this.temporada = temporada;
         this.circuito = circuito;
     }
