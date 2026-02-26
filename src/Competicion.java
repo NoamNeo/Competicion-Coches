@@ -46,9 +46,8 @@ public class Competicion {
         String[] escuderias = null;
         for (Piloto iPiloto : participantes) {
             if (escuderias == null) {
-                String[] buffer = new String[1];
-                buffer[0] = iPiloto.getCoche().getEscuderia();
-                escuderias = buffer;
+                escuderias = new String[1];
+                escuderias[0] = iPiloto.getCoche().getEscuderia();
             } else {
                 int contador = 0;
                 for (String nombre : escuderias) {
@@ -119,6 +118,7 @@ public class Competicion {
     public boolean anhadirCarrera(Carrera carrera, int vueltas) {
         if (!haCampeonato) {
             if (!estaEnLista(carrera)) {
+                carrera.setVueltas(vueltas);
                 carreras = getNewArray(carrera);
                 return true;
             }
