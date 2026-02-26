@@ -7,15 +7,19 @@ public class Carrera {
 
     public boolean ejecutarCarrera() {
         if (!yaCorrida) {
+            double[] velocidades = new double[pilotos.length];
             for (int i = 0; i < pilotos.length; i++) {
-                double velocidadMedia = pilotos[i].getCoche().acabaCarrera(getLongitudTotal()) ? pilotos[i].velocidadMedia() : 0;
-                System.out.println(pilotos[i].getNombre() + " va a " + velocidadMedia + "km/h");
+                velocidades[i] = pilotos[i].getCoche().acabaCarrera(getLongitudTotal()) ? pilotos[i].velocidadMedia() : 0;
+                System.out.println(pilotos[i].getNombre() + " va a " + velocidades[i] + "km/h");
                 int j;
                 for (j = i; j > 0; j--)
-                    if (velocidadMedia > pilotosOrdenados[j].velocidadMedia())
+                    if (velocidades[i] > velocidades[j]) {
                         pilotosOrdenados[j] = pilotosOrdenados[j - 1];
+                        velocidades[j] = velocidades[j - 1];
+                    }
                     else break;
                 pilotosOrdenados[j] = pilotosOrdenados[i];
+                velocidades[j] = velocidades[i];
             }
             yaCorrida = true;
             return true;
@@ -58,5 +62,9 @@ public class Carrera {
 
     public int getLongitudTotal() {
         return circuito.getLongitud() * vueltas;
+    }
+
+    public void setVueltas(int vueltas) {
+        this.vueltas = vueltas;
     }
 }
