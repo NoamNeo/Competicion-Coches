@@ -119,7 +119,7 @@ public class Competicion {
     public boolean anhadirCarrera(Carrera carrera, int vueltas) {
         if (!haCampeonato) {
             if (!estaEnLista(carrera)) {
-                carreras = getBuffer(carrera);
+                carreras = getNewArray(carrera);
                 return true;
             }
         }
@@ -129,14 +129,14 @@ public class Competicion {
     public boolean anhadirPiloto(Piloto piloto) {
         if (!haCampeonato) {
             if (!estaEnLista(piloto)) {
-                participantes = getBuffer(piloto);
+                participantes = getNewArray(piloto);
                 return true;
             }
         }
         return false;
     }
 
-    private Carrera[] getBuffer(Carrera carrera) {
+    private Carrera[] getNewArray(Carrera carrera) {
         int length = (carreras == null) ? 1 : carreras.length + 1;
         Carrera[] buffer = new Carrera[length];
         for (int i = 0; i < carreras.length; i++) {
@@ -146,7 +146,7 @@ public class Competicion {
         return buffer;
     }
 
-    private Piloto[] getBuffer(Piloto piloto) {
+    private Piloto[] getNewArray(Piloto piloto) {
         int length = (participantes == null) ? 1 : participantes.length + 1;
         Piloto[] buffer = new Piloto[length];
         for (int i = 0; i < participantes.length; i++) {
