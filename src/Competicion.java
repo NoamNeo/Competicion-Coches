@@ -13,7 +13,7 @@ public class Competicion {
         if (!haCampeonato) {
             this.puntuacionPilotos = new int[participantes.length];
             for (Carrera iCarrera : carreras) {
-                iCarrera.ejecutarCarrera(participantes);
+                iCarrera.ejecutarCarrera();
                 almacenarResultados(iCarrera.getPilotosOrdenados());
             }
             this.haCampeonato = true;
