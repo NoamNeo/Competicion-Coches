@@ -75,6 +75,7 @@ public class Competicion {
             for (int j = 0; j < escuderias.length; j++) {
                 if (escuderias[j].equals(participantes[i].getCoche().getEscuderia())) {
                     puntuacionEscuderia[j] += puntuacionPilotos[i];
+                    break;
                 }
             }
         }
@@ -137,13 +138,18 @@ public class Competicion {
     }
 
     private Carrera[] getNewArray(Carrera carrera) {
-        int length = (carreras == null) ? 1 : carreras.length + 1;
-        Carrera[] buffer = new Carrera[length];
-        for (int i = 0; i < carreras.length; i++) {
-            buffer[i] = carreras[i];
+        int length;
+        if (carreras == null) {
+            length = 1;
+        } else {
+            length = carreras.length + 1;
         }
-        buffer[length - 1] = carrera;
-        return buffer;
+        Carrera[] arrayTemporal = new Carrera[length];
+        for (int i = 0; i < carreras.length; i++) {
+            arrayTemporal[i] = carreras[i];
+        }
+        arrayTemporal[length - 1] = carrera;
+        return arrayTemporal;
     }
 
     private Piloto[] getNewArray(Piloto piloto) {
