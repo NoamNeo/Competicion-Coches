@@ -7,10 +7,22 @@ public class Circuito {
         return nombre;
     }
 
+    public int getLongitud() {
+        return longitud;
+    }
+
     public void anhadirCarrera(Carrera carrera) {
+        Carrera [] anhadirCarrera = new Carrera [carreras.length+1];
+        for (int i = 0; i<carreras.length; i++){
+            anhadirCarrera[i] = carreras[i];
+        }
+        anhadirCarrera[anhadirCarrera.length-1] = carrera;
+
+        carreras= anhadirCarrera;
     }
 
     public int obtenerCarrerasTotales() {
-        return 0;
+
+        return carreras.length;
     }
 }
