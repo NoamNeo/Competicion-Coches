@@ -27,9 +27,8 @@ public class Carrera {
         return false;
     }
 
-    public Carrera(int vueltas,Piloto[] pilotos, String temporada, Circuito circuito) {
+    public Carrera(Piloto[] pilotos, String temporada, Circuito circuito) {
 //        yaCorrida = false;
-        this.vueltas = vueltas;
         this.pilotos = pilotos;
         pilotosOrdenados = new Piloto[pilotos.length];
         this.temporada = temporada;
