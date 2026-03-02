@@ -17,13 +17,13 @@ public class Circuito {
     }
 
     public void anhadirCarrera(Carrera carrera) {
-        Carrera [] anhadirCarrera = new Carrera [carreras.length+1];
-        for (int i = 0; i<carreras.length; i++){
+        Carrera[] anhadirCarrera = new Carrera[carreras.length + 1];
+        for (int i = 0; i < carreras.length; i++) {
             anhadirCarrera[i] = carreras[i];
         }
-        anhadirCarrera[anhadirCarrera.length-1] = carrera;
+        anhadirCarrera[anhadirCarrera.length - 1] = carrera;
 
-        carreras= anhadirCarrera;
+        carreras = anhadirCarrera;
     }
 
     public int obtenerCarrerasTotales() {

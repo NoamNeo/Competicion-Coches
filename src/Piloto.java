@@ -8,9 +8,9 @@ public class Piloto {
 
     public double velocidadMedia() {
         Random rand = new Random();
-        double numAleatorio = rand.nextDouble(0.6,0.9);
-        //Pongo siempre menor que 1 porque en una carrera la velocidad media
-        //nunca es igual a la velocidad maxima
+        double numAleatorio = rand.nextDouble(0.6, 0.9);
+        // Pongo siempre menor que 1 porque en una carrera la velocidad media
+        // nunca es igual a la velocidad maxima
         double media = coche.getVelocidadMax() * getHabilidad() * numAleatorio;
 
         return media;
@@ -35,17 +35,12 @@ public class Piloto {
             valor = 0.6f;
         }
 
-
         this.habilidad = Float.toString(valor);
     }
-
-
 
     public String getNombre() {
         return nombre;
     }
-
-
 
     public Coche getCoche() {
         return coche;

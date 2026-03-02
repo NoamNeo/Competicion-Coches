@@ -5,18 +5,16 @@ public class Coche {
     private String escuderia;
     private double fiabilidad;
 
-
     public double getVelocidadMax() {
         return velocidadMax;
     }
-
 
     public String getEscuderia() {
         return escuderia;
     }
 
     public Coche(double velocidadMax, String escuderia, double fiabilidad) {
-        this.velocidadMax= velocidadMax;
+        this.velocidadMax = velocidadMax;
         this.escuderia = escuderia;
         this.fiabilidad = fiabilidad;
     }

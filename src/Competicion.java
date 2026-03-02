@@ -11,7 +11,6 @@ public class Competicion {
             System.out.println("\n------------------------------\n\nEjecutamos el campeonato " + this.nombre);
             this.puntuacionPilotos = new int[participantes.length];
             int i = 1;
-            // == iCarrera = carreras[i] i == 0 --> carreras.length
             for (Carrera iCarrera : carreras) {
                 System.out.println("\nCarrera: " + i);
                 iCarrera.ejecutarCarrera();
