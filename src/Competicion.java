@@ -8,10 +8,14 @@ public class Competicion {
 
     public boolean arrancarCampeonato() {
         if (!haCampeonato) {
+            System.out.println("Ejecutamos el campeonato " + this.nombre);
             this.puntuacionPilotos = new int[participantes.length];
+            int i = 1;
             for (Carrera iCarrera : carreras) {
+                System.out.println("Carrera: " + i);
                 iCarrera.ejecutarCarrera();
                 almacenarResultados(iCarrera.getPilotosOrdenados());
+                i++;
             }
             this.haCampeonato = true;
             return true;
@@ -20,6 +24,7 @@ public class Competicion {
     }
 
     public void imprimirResultado() {
+        System.out.println("Resultados de cada piloto:");
         int[] idOrdenadas = new int[participantes.length];
         for (int i = 0; i < idOrdenadas.length; i++) {
             idOrdenadas[i] = i;
@@ -32,10 +37,11 @@ public class Competicion {
     }
 
     public void imprimirResultadoEscuderia() {
+        System.out.println("Resultados de cada escudería:");
         String[] escuderias = getArrayEscuderia(participantes);
         int[] puntuacionEscuderia = getPuntuacionEscuderia(escuderias);
         for (int i = 0; i < escuderias.length; i++) {
-            System.out.println("Escudería: " + escuderias[i] + "\n Puntuación: " + puntuacionEscuderia[i]);
+            System.out.println("Escudería: " + escuderias[i] + "\nPuntuación: " + puntuacionEscuderia[i]);
         }
     }
 
