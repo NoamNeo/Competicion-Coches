@@ -8,12 +8,12 @@ public class Competicion {
 
     public boolean arrancarCampeonato() {
         if (!haCampeonato) {
-            System.out.println("\nEjecutamos el campeonato " + this.nombre);
+            System.out.println("\n------------------------------\n\nEjecutamos el campeonato " + this.nombre);
             this.puntuacionPilotos = new int[participantes.length];
             int i = 1;
             // == iCarrera = carreras[i] i == 0 --> carreras.length
             for (Carrera iCarrera : carreras) {
-                System.out.println("Carrera: " + i);
+                System.out.println("\nCarrera: " + i);
                 iCarrera.ejecutarCarrera();
                 almacenarResultados(iCarrera.getPilotosOrdenados());
                 i++;
@@ -25,7 +25,7 @@ public class Competicion {
     }
 
     public void imprimirResultado() {
-        System.out.println("\nResultados de cada piloto:");
+        System.out.println("\n\nResultados de cada piloto:");
         int[] idOrdenadas = new int[participantes.length];
         for (int i = 0; i < idOrdenadas.length; i++) {
             idOrdenadas[i] = i;
