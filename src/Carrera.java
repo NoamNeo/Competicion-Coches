@@ -17,7 +17,7 @@ public class Carrera {
             double[] velocidades = new double[pilotos.length];
             for (int i = 0; i < pilotos.length; i++) {
                 velocidades[i] = pilotos[i].getCoche().acabaCarrera(getLongitudTotal()) ? pilotos[i].velocidadMedia() : 0;
-                System.out.println(pilotos[i].getNombre() + " va a " + String.format("%.2f", velocidades[i]) + "km/h");
+                System.out.println("\t" + pilotos[i].getNombre() + " va a " + String.format("%.2f", velocidades[i]) + "km/h");
                 int j;
                 for (j = i; j > 0; j--)
                     if (velocidades[i] > velocidades[j]) {
