@@ -16,17 +16,17 @@ public class Carrera {
         if (!yaCorrida) {
             double[] velocidades = new double[pilotos.length];
             for (int i = 0; i < pilotos.length; i++) {
-                velocidades[i] = pilotos[i].getCoche().acabaCarrera(getLongitudTotal()) ? pilotos[i].velocidadMedia() : 0;
-                System.out.println("\t" + pilotos[i].getNombre() + " va a " + String.format("%.2f", velocidades[i]) + "km/h");
+                double velocidad = pilotos[i].getCoche().acabaCarrera(getLongitudTotal()) ? pilotos[i].velocidadMedia() : 0;
+                System.out.println("\t" + pilotos[i].getNombre() + " va a " + String.format("%.2f", velocidad) + "km/h");
                 int j;
                 for (j = i; j > 0; j--)
-                    if (velocidades[i] > velocidades[j]) {
+                    if (velocidad > velocidades[j - 1]) {
                         pilotosOrdenados[j] = pilotosOrdenados[j - 1];
                         velocidades[j] = velocidades[j - 1];
                     }
                     else break;
                 pilotosOrdenados[j] = pilotos[i];
-                velocidades[j] = velocidades[i];
+                velocidades[j] = velocidad;
             }
             yaCorrida = true;
             return true;
