@@ -25,7 +25,7 @@ public class Carrera {
                         velocidades[j] = velocidades[j - 1];
                     }
                     else break;
-                pilotosOrdenados[j] = pilotosOrdenados[i];
+                pilotosOrdenados[j] = pilotos[i];
                 velocidades[j] = velocidades[i];
             }
             yaCorrida = true;
