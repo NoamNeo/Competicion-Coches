@@ -27,15 +27,16 @@ public class Coche {
     }
 
     public boolean acabaCarrera(int kilometros) {
-        double numTramos = kilometros/5;
-        for (int i = 0; i<numTramos;i++){
-            Random rand = new Random();
-            double probFallo = rand.nextDouble();
-            if (probFallo == getFiabilidad()){
+        double numTramos = kilometros / 5.0;
+        Random rand = new Random();
+
+        for (double i = 0; i < numTramos; i += 1.0) {
+            int probFallo = rand.nextInt();
+            if (probFallo == getFiabilidad()*100) {
                 return false;
             }
-
         }
         return true;
     }
+
 }
