@@ -27,9 +27,7 @@ public class Piloto {
         return nombre;
     }
 
-    public int getEdad() {
-        return edad;
-    }
+
 
     public Coche getCoche() {
         return coche;
@@ -49,6 +47,8 @@ public class Piloto {
             float habAleatoria = rand.nextFloat(0.7f,0.8f);
             return habAleatoria;
         }
-        return 0.6f;
+        else {
+            return 0.6f;
+        }
     }
 }
