@@ -142,7 +142,7 @@ public class Competicion {
             length = carreras.length + 1;
         }
         Carrera[] arrayTemporal = new Carrera[length];
-        for (int i = 0; i < carreras.length; i++) {
+        for (int i = 0; i < length - 1; i++) {
             arrayTemporal[i] = carreras[i];
         }
         arrayTemporal[length - 1] = carrera;
@@ -152,7 +152,7 @@ public class Competicion {
     private Piloto[] getNewArray(Piloto piloto) {
         int length = (participantes == null) ? 1 : participantes.length + 1;
         Piloto[] buffer = new Piloto[length];
-        for (int i = 0; i < participantes.length; i++) {
+        for (int i = 0; i < length - 1; i++) {
             buffer[i] = participantes[i];
         }
         buffer[length - 1] = piloto;
