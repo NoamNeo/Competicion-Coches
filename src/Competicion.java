@@ -11,6 +11,7 @@ public class Competicion {
             System.out.println("Ejecutamos el campeonato " + this.nombre);
             this.puntuacionPilotos = new int[participantes.length];
             int i = 1;
+            // == iCarrera = carreras[i] i == 0 --> carreras.length
             for (Carrera iCarrera : carreras) {
                 System.out.println("Carrera: " + i);
                 iCarrera.ejecutarCarrera();
@@ -31,8 +32,8 @@ public class Competicion {
         }
         idOrdenadas = insertSort(idOrdenadas, puntuacionPilotos);
         for (int i = 0; i < idOrdenadas.length; i++) {
-            System.out.println((i + 1) + " Piloto: " + participantes[idOrdenadas[i]].getNombre() + "\nPuntuación: "
-                    + puntuacionPilotos[idOrdenadas[i]]);
+            System.out.println("\t" + (i + 1) + ". " + participantes[idOrdenadas[i]].getNombre() + " - "
+                    + puntuacionPilotos[idOrdenadas[i]] + " puntos");
         }
     }
 
