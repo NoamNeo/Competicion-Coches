@@ -18,7 +18,7 @@
                 Piloto piloto4 = new Piloto ("Leonardo",26,coche4,"Bueno");
                 Piloto piloto5 = new Piloto ("Estéfano",36,coche5,"Excelente");
                 Piloto piloto6 = new Piloto ("Raúl", 27,coche6,"Mediocre");
-                Piloto[] arrPiloto = {piloto6,piloto1};
+                Piloto[] arrPiloto = {piloto6,piloto1,piloto3,piloto5,piloto4,piloto2};
 
 
                 Circuito adelaida = new Circuito("Adelaida", 3780);
