@@ -2,12 +2,12 @@
         public class Simulador {
             public static void main(String[] args) {
 
-                Coche coche1 = new Coche(350,"Audi",0.2);
-                Coche coche2 = new Coche (352,"Audi",0.4);
-                Coche coche3= new Coche (351,"RedBull",0.9);
-                Coche coche4 = new Coche (353,"RedBull",0.6);
-                Coche coche5 = new Coche (351,"Ferrari",0.5);
-                Coche coche6 = new Coche (351,"Ferrari",0.8);
+                Coche coche1 = new Coche(350,"Audi",0.0002);
+                Coche coche2 = new Coche (352,"Audi",0.0004);
+                Coche coche3= new Coche (351,"RedBull",0.0009);
+                Coche coche4 = new Coche (353,"RedBull",0.0006);
+                Coche coche5 = new Coche (351,"Ferrari",0.0005);
+                Coche coche6 = new Coche (351,"Ferrari",0.0008);
 
 
 
