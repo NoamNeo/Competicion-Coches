@@ -13,7 +13,7 @@ public class Piloto {
         //nunca es igual a la velocidad maxima
         double media = coche.getVelocidadMax() * getHabilidad() * numAleatorio;
 
-        return 0;
+        return media;
     }
 
     public Piloto(String nombre, int edad, Coche coche, String habilidad) {

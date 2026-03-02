@@ -21,10 +21,10 @@
                 Piloto[] arrPiloto = {piloto6,piloto1,piloto3,piloto5,piloto4,piloto2};
 
 
-                Circuito adelaida = new Circuito("Adelaida", 3780);
-                Circuito jerez = new Circuito ("Jerez",4423);
-                Circuito madring = new Circuito("Madring",5474);
-                Circuito barcelona = new Circuito ("Barcelona", 4657);
+                Circuito adelaida = new Circuito("Adelaida", 378);
+                Circuito jerez = new Circuito ("Jerez",442);
+                Circuito madring = new Circuito("Madring",547);
+                Circuito barcelona = new Circuito ("Barcelona", 465);
 
 
 
