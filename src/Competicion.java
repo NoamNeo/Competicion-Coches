@@ -8,7 +8,7 @@ public class Competicion {
 
     public boolean arrancarCampeonato() {
         if (!haCampeonato) {
-            System.out.println("Ejecutamos el campeonato " + this.nombre);
+            System.out.println("\nEjecutamos el campeonato " + this.nombre);
             this.puntuacionPilotos = new int[participantes.length];
             int i = 1;
             // == iCarrera = carreras[i] i == 0 --> carreras.length
@@ -25,7 +25,7 @@ public class Competicion {
     }
 
     public void imprimirResultado() {
-        System.out.println("Resultados de cada piloto:");
+        System.out.println("\nResultados de cada piloto:");
         int[] idOrdenadas = new int[participantes.length];
         for (int i = 0; i < idOrdenadas.length; i++) {
             idOrdenadas[i] = i;
@@ -38,11 +38,12 @@ public class Competicion {
     }
 
     public void imprimirResultadoEscuderia() {
-        System.out.println("Resultados de cada escudería:");
+        System.out.println("\nResultados de cada escudería:");
         String[] escuderias = getArrayEscuderia(participantes);
         int[] puntuacionEscuderia = getPuntuacionEscuderia(escuderias);
         for (int i = 0; i < escuderias.length; i++) {
-            System.out.println((i + 1) + " Escudería: " + escuderias[i] + "\nPuntuación: " + puntuacionEscuderia[i]);
+            System.out.println("\t" + (i + 1) + ". " + escuderias[i] + " - "
+                    + puntuacionEscuderia[i] + " puntos");
         }
     }
 
@@ -104,16 +105,16 @@ public class Competicion {
         int cantPilotos = (arrayOrdenado.length < 3) ? arrayOrdenado.length : 3;
         for (int i = 0; i < cantPilotos; i++) {
             for (int j = 0; j < participantes.length; j++) {
-                if (arrayOrdenado[i].getNombre().equals(participantes[j].getNombre())) {
-                    switch (j) {
+                if (arrayOrdenado[i] == participantes[j]) {
+                    switch (i) {
                         case 0:
-                            puntuacionPilotos[j] += 10;
+                            puntuacionPilotos[i] += 10;
                             break;
                         case 1:
-                            puntuacionPilotos[j] += 8;
+                            puntuacionPilotos[i] += 8;
                             break;
                         case 2:
-                            puntuacionPilotos[j] += 5;
+                            puntuacionPilotos[i] += 5;
                             break;
                     }
                 }
