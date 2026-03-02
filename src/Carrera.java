@@ -7,6 +7,7 @@ public class Carrera {
 
     public boolean ejecutarCarrera() {
         if (!yaCorrida) {
+            pilotosOrdenados = new Piloto[pilotos.length];
             double[] velocidades = new double[pilotos.length];
             for (int i = 0; i < pilotos.length; i++) {
                 velocidades[i] = pilotos[i].getCoche().acabaCarrera(getLongitudTotal()) ? pilotos[i].velocidadMedia() : 0;
@@ -25,14 +26,6 @@ public class Carrera {
             return true;
         }
         return false;
-    }
-
-    public Carrera(Piloto[] pilotos, String temporada, Circuito circuito) {
-//        yaCorrida = false;
-        this.pilotos = pilotos;
-        pilotosOrdenados = new Piloto[pilotos.length];
-        this.temporada = temporada;
-        this.circuito = circuito;
     }
 
     public boolean isYaCorrida() {
