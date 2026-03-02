@@ -17,11 +17,29 @@ public class Piloto {
     }
 
     public Piloto(String nombre, int edad, Coche coche, String habilidad) {
+
         this.nombre = nombre;
         this.edad = edad;
         this.coche = coche;
-        this.habilidad = habilidad;
+
+        Random rand = new Random();
+        float valor;
+
+        if (habilidad.equals("Excelente")) {
+            valor = rand.nextFloat(0.9f, 1f);
+        } else if (habilidad.equals("Bueno")) {
+            valor = rand.nextFloat(0.8f, 0.9f);
+        } else if (habilidad.equals("Mediocre")) {
+            valor = rand.nextFloat(0.7f, 0.8f);
+        } else {
+            valor = 0.6f;
+        }
+
+
+        this.habilidad = Float.toString(valor);
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -33,22 +51,7 @@ public class Piloto {
         return coche;
     }
 
-    public float getHabilidad() {
-        Random rand = new Random();
-        if (habilidad.equals("Excelente")) {
-            float habAleatoria = rand.nextFloat(0.9f,1);
-            return habAleatoria;
-        }
-        if (habilidad.equals("Bueno")) {
-            float habAleatoria = rand.nextFloat(0.8f,0.9f);
-            return habAleatoria;
-        }
-        if (habilidad.equals("Mediocre")) {
-            float habAleatoria = rand.nextFloat(0.7f,0.8f);
-            return habAleatoria;
-        }
-        else {
-            return 0.6f;
-        }
+    public double getHabilidad() {
+        return Double.parseDouble(habilidad);
     }
 }
