@@ -31,7 +31,7 @@ public class Competicion {
         }
         idOrdenadas = insertSort(idOrdenadas, puntuacionPilotos);
         for (int i = 0; i < idOrdenadas.length; i++) {
-            System.out.println("Piloto: " + participantes[idOrdenadas[i]].getNombre() + "\nPuntuación: "
+            System.out.println((i + 1) + " Piloto: " + participantes[idOrdenadas[i]].getNombre() + "\nPuntuación: "
                     + puntuacionPilotos[idOrdenadas[i]]);
         }
     }
@@ -41,7 +41,7 @@ public class Competicion {
         String[] escuderias = getArrayEscuderia(participantes);
         int[] puntuacionEscuderia = getPuntuacionEscuderia(escuderias);
         for (int i = 0; i < escuderias.length; i++) {
-            System.out.println("Escudería: " + escuderias[i] + "\nPuntuación: " + puntuacionEscuderia[i]);
+            System.out.println((i + 1) + " Escudería: " + escuderias[i] + "\nPuntuación: " + puntuacionEscuderia[i]);
         }
     }
 
@@ -190,6 +190,7 @@ public class Competicion {
         return false;
     }
 
+    // TODO: Eliminar getter
     public String getNombre() {
         return nombre;
     }
