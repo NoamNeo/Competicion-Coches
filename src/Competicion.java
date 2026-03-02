@@ -108,13 +108,13 @@ public class Competicion {
                 if (arrayOrdenado[i] == participantes[j]) {
                     switch (i) {
                         case 0:
-                            puntuacionPilotos[i] += 10;
+                            puntuacionPilotos[j] += 10;
                             break;
                         case 1:
-                            puntuacionPilotos[i] += 8;
+                            puntuacionPilotos[j] += 8;
                             break;
                         case 2:
-                            puntuacionPilotos[i] += 5;
+                            puntuacionPilotos[j] += 5;
                             break;
                     }
                 }
@@ -190,11 +190,6 @@ public class Competicion {
             }
         }
         return false;
-    }
-
-    // TODO: Eliminar getter
-    public String getNombre() {
-        return nombre;
     }
 
     public Competicion(String nombre) {
