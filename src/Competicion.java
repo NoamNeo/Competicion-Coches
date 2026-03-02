@@ -94,7 +94,8 @@ public class Competicion {
     }
 
     private void almacenarResultados(Piloto[] arrayOrdenado) {
-        for (int i = 0; i < 3; i++) {
+        int cantPilotos = (arrayOrdenado.length < 3) ? arrayOrdenado.length : 3;
+        for (int i = 0; i < cantPilotos; i++) {
             for (int j = 0; j < participantes.length; j++) {
                 if (arrayOrdenado[i].getNombre().equals(participantes[j].getNombre())) {
                     switch (j) {
