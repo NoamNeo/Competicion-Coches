@@ -35,25 +35,8 @@ public class Carrera {
     }
 
 
-
-    public boolean isYaCorrida() {
-        return yaCorrida;
-    }
-
-    public int getVueltas() {
-        return vueltas;
-    }
-
-    public Piloto[] getPilotos() {
-        return pilotos;
-    }
-
     public Piloto[] getPilotosOrdenados() {
         return pilotosOrdenados;
-    }
-
-    public String getTemporada() {
-        return temporada;
     }
 
     public Circuito getCircuito() {
