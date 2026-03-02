@@ -11,6 +11,11 @@ public class Circuito {
         return longitud;
     }
 
+    public Circuito(String nombre, int longitud) {
+        this.nombre = nombre;
+        this.longitud = longitud;
+    }
+
     public void anhadirCarrera(Carrera carrera) {
         Carrera [] anhadirCarrera = new Carrera [carreras.length+1];
         for (int i = 0; i<carreras.length; i++){

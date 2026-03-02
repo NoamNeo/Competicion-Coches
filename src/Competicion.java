@@ -160,6 +160,9 @@ public class Competicion {
     }
 
     private boolean estaEnLista(Carrera carrera) {
+        if (carreras == null) {
+            return false;
+        }
         for (Carrera iCarrera : carreras) {
             if (iCarrera.getCircuito().getNombre().equals(carrera.getCircuito().getNombre())) {
                 return true;
@@ -169,6 +172,9 @@ public class Competicion {
     }
 
     private boolean estaEnLista(Piloto piloto) {
+        if (participantes == null) {
+            return false;
+        }
         for (Piloto iPiloto : participantes) {
             if (iPiloto.getNombre().equals(piloto.getNombre())) {
                 return true;
