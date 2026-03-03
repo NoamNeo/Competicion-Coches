@@ -1,13 +1,13 @@
 public class Competicion {
 
-    private boolean haCampeonato;
+    private boolean haCorridoCampeonato;
     private String nombre;
     private Piloto[] participantes;
     private int[] puntuacionPilotos;
     private Carrera[] carreras;
 
     public boolean arrancarCampeonato() {
-        if (!haCampeonato) {
+        if (!haCorridoCampeonato) {
             System.out.println("\n------------------------------\n\nEjecutamos el campeonato " + this.nombre);
             this.puntuacionPilotos = new int[participantes.length];
             int i = 1;
@@ -17,7 +17,7 @@ public class Competicion {
                 almacenarResultados(iCarrera.getPilotosOrdenados());
                 i++;
             }
-            this.haCampeonato = true;
+            this.haCorridoCampeonato = true;
             return true;
         }
         return false;
@@ -29,7 +29,7 @@ public class Competicion {
         for (int i = 0; i < idOrdenadas.length; i++) {
             idOrdenadas[i] = i;
         }
-        idOrdenadas = insertSort(idOrdenadas, puntuacionPilotos);
+        insertSort(idOrdenadas, puntuacionPilotos);
         for (int i = 0; i < idOrdenadas.length; i++) {
             System.out.println("\t" + (i + 1) + ". " + participantes[idOrdenadas[i]].getNombre() + " - "
                     + puntuacionPilotos[idOrdenadas[i]] + " puntos");
@@ -86,18 +86,16 @@ public class Competicion {
         return puntuacionEscuderia;
     }
 
-    private int[] insertSort(int[] arrayId, int[] arrayPuntuacion) {
-        int[] sorted = arrayId;
-        for (int i = 1; i < sorted.length; i++) {
-            int key = sorted[i];
+    private void insertSort(int[] arrayId, int[] arrayPuntuacion) {
+        for (int i = 1; i < arrayId.length; i++) {
+            int key = arrayId[i];
             int j = i - 1;
-            while (j >= 0 && arrayPuntuacion[sorted[j]] < arrayPuntuacion[key]) {
-                sorted[j + 1] = sorted[j];
+            while (j >= 0 && arrayPuntuacion[arrayId[j]] < arrayPuntuacion[key]) {
+                arrayId[j + 1] = arrayId[j];
                 j -= 1;
             }
-            sorted[j + 1] = key;
+            arrayId[j + 1] = key;
         }
-        return sorted;
     }
 
     private void almacenarResultados(Piloto[] arrayOrdenado) {
@@ -122,7 +120,7 @@ public class Competicion {
     }
 
     public boolean anhadirCarrera(Carrera carrera, int vueltas) {
-        if (!haCampeonato) {
+        if (!haCorridoCampeonato) {
             if (!estaEnLista(carrera)) {
                 carrera.setVueltas(vueltas);
                 carreras = getNewArray(carrera);
@@ -133,7 +131,7 @@ public class Competicion {
     }
 
     public boolean anhadirPiloto(Piloto piloto) {
-        if (!haCampeonato) {
+        if (!haCorridoCampeonato) {
             if (!estaEnLista(piloto)) {
                 participantes = getNewArray(piloto);
                 return true;
